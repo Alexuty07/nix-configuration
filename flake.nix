@@ -9,9 +9,12 @@
     nixosConfigurations.primus = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-        ./configuration.nix
+        ./hosts/primus
+        ./shell
+        ./system
+        ./desktop
+        ./desktop/autologin.nix
+        ./desktop/plasma.nix
       ];
     };
   };
